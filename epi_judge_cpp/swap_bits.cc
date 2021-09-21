@@ -1,7 +1,9 @@
 #include "test_framework/generic_test.h"
 long long SwapBits(long long x, int i, int j) {
-  // TODO - you fill in here.
-  return 0;
+    long long is_diff_mask = (x >> i & 1) ^ (x >> j & 1);
+    x ^= is_diff_mask << i;
+    x ^= is_diff_mask << j;
+    return x;
 }
 
 int main(int argc, char* argv[]) {
